@@ -51,7 +51,7 @@ def search_images_ddg(key,max_n=200):
      res        = requests.post(url,data=params)
      searchObj  = re.search(r'vqd=([\d-]+)\&',res.text)
      if not searchObj: print('Token Parsing Failed !'); return
-     requestUrl = url + 'i.js'
+     requestUrl = f'{url}i.js'
      headers    = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0'}
      params     = (('l','us-en'),('o','json'),('q',key),('vqd',searchObj.group(1)),('f',',,,'),('p','1'),('v7exp','a'))
      urls       = []
